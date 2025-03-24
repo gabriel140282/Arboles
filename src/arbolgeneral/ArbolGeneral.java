@@ -125,15 +125,14 @@ public class ArbolGeneral {
         int gradoNodo = 0;
         NodoGeneral hijo = nodo.primerHijo;
 
-        // Contar el número de hijos y calcular el grado máximo en la misma pasada
-        int maxGrado = 0;
+        int gradoMaximo = 0;
         while (hijo != null) {
             gradoNodo++;
-            maxGrado = Math.max(maxGrado, calcularGrado(hijo));
+            gradoMaximo = Math.max(gradoMaximo, calcularGrado(hijo));
             hijo = hijo.hermano;
         }
 
-        return Math.max(gradoNodo, maxGrado);
+        return Math.max(gradoNodo, gradoMaximo);
     }
 
 
